@@ -1,0 +1,47 @@
+version: '3'
+services:
+  mail1:
+    build: ./mail1
+    image: ibemail1-image
+    container_name: mail1
+    restart: always
+    # ports: 8080:80
+    dns:
+      - 172.30.0.4
+      - 8.8.8.8
+    networks:
+      app_net:
+        ipv4_address: 172.30.0.2
+
+  mail2:
+    build: ./mail2
+    image: ibemail2-image
+    container_name: mail2
+    restart: always
+    # ports: 8081:80
+    dns:
+      - 172.30.0.4
+      - 8.8.8.8
+    networks:
+      app_net:
+        ipv4_address: 172.30.0.3
+
+  nsd:
+    build: ./nsd
+    image: ibe-nsd-image
+    container_name: nsd
+    dns:
+      - 172.30.0.4
+      - 8.8.8.8
+    networks:
+      app_net:
+        ipv4_address: 172.30.0.4
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1

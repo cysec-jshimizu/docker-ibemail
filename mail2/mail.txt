@@ -1,0 +1,5 @@
+From: root@example.fuga
+To: root@example.hoge
+
+hello.
+This is a test mail.

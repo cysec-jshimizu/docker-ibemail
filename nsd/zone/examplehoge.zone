@@ -1,0 +1,19 @@
+$TTL 86400
+
+@    IN SOA ns.example.hoge.	root.example.hoge. (
+     2022101001		; serial
+     3600		; refresh
+     900		; retry
+     604800		; expire
+     86400		; minimum
+)
+
+@	IN NS	ns.example.hoge.
+ns	IN A	172.30.0.4
+@	IN A	172.30.0.2
+*	IN A	172.30.0.2
+@	IN MX	10	example.hoge.
+*	IN MX	20	example.hoge.
+
+;__ibemailkey	IN TXT	"ver=1.0; a=IDNIKS; c=bn254; n=1;" "P=1 IXtzFA+KhetMr1B2791XHhO3fVHr9pS0+Rn0WviA+HE= HmBVpArpxJHM0IgdcC0eWUylaIPHZpBujtO9ZYuo2uw=;" "Q=1 Ff9lh69cLS9vn83TZgHDfpzPSbKqmMOgSB3CLBiySBg= FgVWTkHtFw358l2ZU3mDcaGHJohQzJt0Gqm9bElxipg= Cthb2PEXCwo6QPr5VJfzCxNlIIUjHTx0UgZJvfX6x5Q= Eu87fMsjq+InoyCdaBygt37RI3D0s+kfzj4ta1GFPvM=;" "lQ=1 D7MN3wkJPpmjBlwqZnOROIZkSHeDXBj2MX8vyf2WZ9U= JKaA69GsBwhmtD/1JrR+2yct4+aAYAD7rUDjzBs+ryM= GWyxc7x4fiOMmu0P6hZENyNgkTrJ3/MDBWf69PN/BWQ= BDEp+1eSgG6oiKGZgdC/gq5Fpy6LT67es4reDYtMQpY=;"
+__ibemailkey IN TXT "ver=1.0; date=2021023100;"

@@ -1,0 +1,39 @@
+compatibility_level = 2
+
+smtpd_banner = $myhostname ESMTP $mail_name
+biff = no
+
+mydomain = example.hoge
+myorigin = $mydomain
+myhostname = $mydomain
+# mydestination = localhost, $mydomain
+mydestination = pcre:/etc/postfix/mydestination
+
+inet_interfaces = all
+inet_protocols = all
+
+mynetworks = 172.30.0.0/24, 127.0.0.0/8
+unknown_local_recipient_reject_code = 550
+
+# alias_maps = lmdb:/etc/postfix/aliases
+# alias_database = lmdb:/etc/aliases
+
+home_mailbox = Maildir/
+mailbox_size_limit = 0
+
+queue_directory = /var/spool/postfix
+
+# mailbox_command = /usr/bin/procmail
+
+# sendmail_path = /usr/sbin/sendmail.postfix
+
+readme_directory = no
+
+# TLS CONFIGURATION
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+smtp_tls_security_level = may

@@ -1,0 +1,19 @@
+$TTL 86400
+
+@    IN SOA ns.example.fuga.	root.example.fuga. (
+     2022101001		; serial
+     3600		; refresh
+     900		; retry
+     604800		; expire
+     86400		; minimum
+)
+
+@	IN NS	ns.example.fuga.
+ns	IN A	172.30.0.4
+@	IN A	172.30.0.3
+*	IN A	172.30.0.3
+@	IN MX	10	example.fuga.
+*	IN MX	20	example.fuga.
+
+;__ibemailkey	IN TXT	"ver=1.0; a=IDNIKS; c=bn254; n=1;" "P=1 Gv7NfDFGZwqAMRuWMW4Ay6ECMkxPGEI38HIcy+RA6HY= E+DNVplJcnwZVgChbvuVHQtX1roYSSCbvjfLETVFDLo=;" "Q=1 Ei6ldlL1a0VRMY57bqXDXATWqAo6X9yIB5fIrva+2As= I5A16ow91luatwQJItkLcZN0L1iP5KusARcZQfiST6c= Dg2uViA6QYz+1xnJxoAXW8NUoidtuUeYkZWduGZBe/Y= GwwziBZdI2gj8UKIiPRyAz6fWOyzTpDM9hz14SMNDFA=;" "lQ=1 CjRVdD0UIXu+YNaW/PyjuQGQ2qWas+c5UGE47b/QxIo= JO3KRHvL6gC94HfPRQk4O9mQv9iNBcRHfObjLYrtnxg= D3rc7h5iOM6Pe1f00EHX/jGTmVZTbvDNW97mKV0wW9U= CtchbPhlIkyDFSW08zbg0+nZ+U1fsZYXobUBO73o9O0=;"
+__ibemailkey IN TXT "ver=1.0; date=2020123100;"
