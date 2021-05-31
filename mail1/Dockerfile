@@ -1,5 +1,5 @@
-FROM alpine:3.12
-RUN apk --update add nginx postfix postfix-pcre rsyslog supervisor && \
+FROM alpine:3.11
+RUN apk --update add nginx postfix postfix-pcre procmail rsyslog supervisor && \
     apk add gcc g++ make curl && \
     apk add curl-dev openssl-dev gmp-dev boost-dev && \
     apk add git nano bash
@@ -23,9 +23,9 @@ RUN git clone https://github.com/herumi/mcl && \
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # build ibemail
-# COPY ibemail/ /ibemail
-RUN git clone https://github.com/cysec-jshimizu/ibemail && \
-    mkdir /var/cache/ibemail && \
+COPY ibemail/ /ibemail
+# RUN git clone https://github.com/cysec-jshimizu/ibemail && \
+RUN mkdir /var/cache/ibemail && \
     make -C /ibemail/idniks && \
     make all -C /ibemail/ibe_mail && \
     make install -C /ibemail/ibe_mail && \

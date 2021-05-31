@@ -1,5 +1,5 @@
-FROM alpine:3.12
-RUN apk --update add nginx postfix postfix-pcre rsyslog supervisor && \
+FROM alpine:3.11
+RUN apk --update add nginx postfix procmail postfix-pcre rsyslog supervisor && \
     apk add gcc g++ make curl && \
     apk add curl-dev openssl-dev gmp-dev boost-dev && \
     apk add git nano bash
